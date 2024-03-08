@@ -1,0 +1,2 @@
+Movie Recommendation App with React
+This project is a movie recommendation app that suggests movies to users based on their preferences. It helps users discover new movies they might enjoy. It is a user-friendly web application that offers personalized movie recommendations based on user preferences. It enables users to search for movies, explore movie details, receive genre-based recommendations.
