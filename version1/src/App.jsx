@@ -7,9 +7,9 @@ import './App.css'
 
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
-import Signin from './pages/signIn';
-import Signout from './pages/signOut';
-import Details from './Page/Details';
+import SignOut from './pages/Signout';
+import Signin from './pages/Signin';
+import Details from './pages/Details';
 
 function App() {
   const router = createBrowserRouter(
@@ -18,8 +18,8 @@ function App() {
         <Route path="/" element = {<Home/>} />
         <Route path="/Fav" element = {<Favorites/>} />
         <Route path="/Signin" element = {<Signin/>} />
-        <Route path="/Signout" element = {<Signout/>} />
-        
+        <Route path="/Signout" element = {<SignOut/>} />
+        <Route path="/Details" element = {<Details/>} />
       </Route>
     )
   )
