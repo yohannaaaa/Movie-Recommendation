@@ -1,0 +1,62 @@
+.header{
+    margin: 0rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    border-style: solid;
+    border-width: 0rem 0rem 0.1rem 0rem;
+}
+
+.header .rec{
+    color: red;
+}
+
+.header .searchBox{
+    display: inline-flex;
+    width: 33rem;
+    height: 3rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    background-color: rgb(222, 217, 209);
+    border-radius: 2rem;
+    padding-left: 1rem;
+    align-items: center;
+}
+
+.header .searchBox input{
+    background-color: rgba(255, 255, 255, 0);
+    font-size: larger;
+    width: 29rem;
+    height: 2rem;
+    border-style: none;
+}
+
+.header .signOut{
+    padding: 0.5rem;
+    width: 6rem;
+    font-size: larger;
+    border-radius: 2rem;
+    border-style: none;
+    color: white;
+    background-color: black;
+}
+
+.header .signOut:hover{
+    color: black;
+    background-color: rgb(205, 205, 205);
+}
+
+.header .watchList:hover{
+    font-weight:800;
+    border-style: solid;
+    border-width: 0rem 0rem 0.1rem 0rem;
+    padding-bottom: 0.5rem;
+}
+
+.header .Favorites:hover{
+    font-weight:800;
+    border-style: solid;
+    border-width: 0rem 0rem 0.1rem 0rem;
+    padding-bottom: 0.5rem;
+}

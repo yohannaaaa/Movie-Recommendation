@@ -1,0 +1,51 @@
+h2{
+    font-size: 50px;
+    margin-bottom: 0.01%;
+  }
+  
+  body .movieTilte{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 25rem;
+  }
+  
+  .movieDescrption1{
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .movieDes{
+    color: rgb(173, 173, 173);
+  }
+  
+  .rating{
+    padding: 0.7rem;
+    font-weight: 900;
+    border-style: solid;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10rem;
+  }
+  
+  .movieDescription{
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  
+  
+  .topBox{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .poster{
+    width: 20%
+  }
