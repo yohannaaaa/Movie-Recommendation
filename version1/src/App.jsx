@@ -7,11 +7,12 @@ function App() {
   const [movieTitle, setMovieTitle] = useState({});
 
   useEffect(() => {
-    const movieId = 278;
+    const movieId = 123;
     const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=042aa4748de2bd655dc1224d9e6c6baa`;
 
     fetch(url)
       .then(response => response.json())
+      //.then(json => console.log(json))
       .then(data => {
         setMovieTitle(data);
       })

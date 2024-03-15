@@ -24,16 +24,16 @@ export default function Details({move}){
                 </div>
                 </div>
                 <div className='movieDescription'>
-                    <img src = {move.poster_path} className='poster'></img>
+                    <img src = {`https://image.tmdb.org/t/p/w500/${move.poster_path}`} className='poster'></img>
                     <div className="description">
                         <p>
                             {move.overview}
                         </p>
                         <div className="genure">
                             {
-                               // move.genre_ids.map(genreId => (<div key={genreId} className="gen">{genreId}</div>))    
+                               //move.genre_ids.map(genreId => (<div key={genreId} className="gen">{genreId}</div>))    
                             }
-                            <div key={genreId} className="gen">{move.genre_ids[0]}</div>
+                            
                         </div>
                         <button className="add2List">ADD TO WATCH LIST</button>
                     </div>
