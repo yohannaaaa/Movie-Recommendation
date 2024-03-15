@@ -6,6 +6,7 @@ export default function Header(){
             <h1 className="brandName"><span className="rec">Rec</span>ommend</h1>
             <div className="searchBox">
                 <input type="text"  placeholder="search"></input>
+                
             </div>
             <div className = "watchList">
                 Watch list

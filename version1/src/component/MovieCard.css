@@ -1,0 +1,22 @@
+.moveCard{
+     background-color: rgb(255, 255, 255);
+     padding: 1rem;
+     width: 30rem;
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     margin: 1rem;
+     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.434); 
+}
+
+.moveCard .imagePoster{
+    width: 12rem;
+}
+
+.moveCard .add2WatchList{
+    background-color: black;
+    color: white;
+    border-style: none;
+    font-size:medium;
+    padding: 0.5rem;
+}

@@ -1,32 +1,58 @@
 import React from "react";
 import Header from '../component/Header'
-
-//const sample = {Tittle: "tittle", year:"2023", time: "1h 43min", pg: 13,  Rating: 8.8, poster: poster , details: "Buried in the past lies a powerful truth that could change the future of the wizarding world. Albus Dumbledore, entrusted with a perilous mission, assembles a fearless team led by Newt Scamander, the brilliant magizoologist. Their odyssey takes them into the teeming heart of Gellert Grindelwald's dark army, where they must confront not only formidable foes but also long-held secrets that threaten to tear them apart. Love, loyalty, and the fate of the wizarding world itself hang in the balance in this epic adventure."}
+import MovieCard from "../component/MovieCard";
+//const sample = {title: "The zone of Interest", release_date:"2023", time: "1h 43min", age: "PG13", genre_ids:[22, 108, 12], vote_average: 8.8, poster_path: poster , overview: "Buried in the past lies a powerful truth that could change the future of the wizarding world. Albus Dumbledore, entrusted with a perilous mission, assembles a fearless team led by Newt Scamander, the brilliant magizoologist. Their odyssey takes them into the teeming heart of Gellert Grindelwald's dark army, where they must confront not only formidable foes but also long-held secrets that threaten to tear them apart. Love, loyalty, and the fate of the wizarding world itself hang in the balance in this epic adventure."}
 
 import './Details.css'
 export default function Details({move}){
+    const recommended = [move, move, move, move, move, move, move, move, move];
     return(
         <>
             <Header/>
-            <div>
+            <div className="detailsBody">
                 <div className='topBox'>
                 <div className='movieTilte'>
-                    <h2>{move.Tittle}</h2>
+                    <h2>{move.title}</h2>
                     <div className='movieDescrption1'>
-                        <p className='movieDes'>{move.year}</p>
-                        <p className='movieDes'>{move.pg}</p>
-                        <p className='movieDes'>{movie.time}</p>
+                        <p className='movieDes'>{move.release_date}</p>
+                        <p className='movieDes'>{move.age}</p>
+                        <p className='movieDes'>{move.time}</p>
                     </div>
                 </div>
                 <div className='rating'>
-                    Rating {move.Rating} ⭐️
+                    Rating {move.vote_average} ⭐️
                 </div>
                 </div>
                 <div className='movieDescription'>
-                <img src = {move.poster} className='poster'></img>
-                <p>
-                    {move.details}
-                </p>
+                    <img src = {move.poster_path} className='poster'></img>
+                    <div className="description">
+                        <p>
+                            {move.overview}
+                        </p>
+                        <div className="genure">
+                            {
+                               // move.genre_ids.map(genreId => (<div key={genreId} className="gen">{genreId}</div>))    
+                            }
+                            <div key={genreId} className="gen">{move.genre_ids[0]}</div>
+                        </div>
+                        <button className="add2List">ADD TO WATCH LIST</button>
+                    </div>
+                </div>
+                <div className="recommendations">
+                    <div className="moreLike">
+                        <div className="decorations"></div>
+                        <h2>More like this</h2>
+                    </div>
+                    <div className="sortBy">
+                        <button className="sort">by Tittle</button>
+                        <button className="sort">by Genre</button>
+                        <button className="sort">by Actor</button>
+                    </div>
+                    <div className="recommended">
+                        {
+                            recommended.map((rec)=>(<MovieCard movie={rec}/>))
+                        }
+                    </div>
                 </div>
             </div>
         </>
