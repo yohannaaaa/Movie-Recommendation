@@ -4,7 +4,26 @@ import MovieCard from "../component/MovieCard";
 import { useState, useEffect } from 'react';
 
 import './Details.css'
-export default function Details({move}){
+export default function Details({movieId}){
+
+    const [move, setMove] = useState({});
+
+    useEffect(() => {
+    
+    const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=042aa4748de2bd655dc1224d9e6c6baa`;
+
+    fetch(url)
+      .then(response => response.json())
+      //.then(json => console.log(json))
+      .then(data => {
+        setMove(data);
+      })
+      .catch(error => {
+        console.error('Error fetching movie details:', error);
+      });
+    }, []); 
+
+
     function genreArrayExtracter(){
         let array = new Array();
         if (move && move.genres) {
@@ -31,7 +50,9 @@ export default function Details({move}){
     }
 
     const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter()));
-    console.log(genreArrayExtracter())
+
+    console.log(move);
+
     return(
         <>
             <Header/>
