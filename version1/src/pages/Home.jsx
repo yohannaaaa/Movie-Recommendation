@@ -1,7 +1,11 @@
+import { useState, useEffect } from 'react'
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import {MoviesHome} from  '../components/MoviesHome';
+
 export default function Home(){
-    return(
-        <>
-            <h1>Home</h1>
-        </>
-    )
+   return (<div>
+   <MoviesHome/>
+   </div>
+   )
+  
 }
