@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Footer from './pages/Footer';
 
 //react router dom
 import{
@@ -41,6 +42,7 @@ export default App;
       <>
       <div><Header/></div> 
       <div><Outlet/></div>
+      <div><Footer/></div>
       </>
     )
   }
