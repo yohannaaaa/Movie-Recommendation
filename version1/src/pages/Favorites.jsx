@@ -26,7 +26,7 @@ export default function Favorites(){
                                 <Link to={`/details/${movie.id}`} key={index} className="p-1" onClick={() => window.location.load(`/details/${movie.id}`)}>
                                     <img className="w-[15rem] p-1" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                                 </Link>
-                                <button onClick={()=>{handleDelete(index)}} className="background: red">Delete</button>
+                                <button className=" bg-pink-500 py-2 px-4 rounded-lg text-white hover:bg-pink-700 transition-colors duration-300 ease-in-out" onClick={()=>{handleDelete(index)}} >Delete</button>
                             </div>
                             ))
                         } 
