@@ -29,20 +29,21 @@ const SearchBox = () => {
   };
 
     return(
-        <div className='search  flex justify-between px-5 py-2 bg-gray-100 rounded'>
-              <form onSubmit={handleSubmit}>
+        <div>
+              <form onSubmit={handleSubmit} className='search  flex justify-between px-5 py-2 bg-gray-100 rounded w-[70%]' >
         <input
           type="text"
           value={searchTerm}
           onChange={handleSearchChange}
           placeholder="Search for a movie..."
+          className='w-[30rem]'
         />
-        <button type="submit"><CiSearch/></button>
+        <button type="submit" className='pl-3'><CiSearch/></button>
       </form>
       {searchResults.length > 0 && (
-        <ul className="relative -translate-x-2/4 z-[100] left-2/4 top-2.5; h-[8rem] overflow-y-scroll ">
+        <ul className="relative -translate-x-2/4 z-[100] left-[14.5rem] top-2.5; h-[8rem] overflow-y-scroll  bg-gray-100 rounded w-[70%] m-[1rem]">
           {searchResults.map((movie) => (
-            <li key={movie.id}>
+            <li key={movie.id} className='pl-3'>
               <Link to={`/details/${movie.id}`} onClick={() => window.location.load(`/details/${movie.id}`)}>
                 {
                     movie.title
