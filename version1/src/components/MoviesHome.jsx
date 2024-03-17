@@ -30,6 +30,7 @@ export const MoviesHome = () => {
         setGenres={setGenres}
       />
 
+<<<<<<< HEAD
       <div className='grid m-3 grid-cols-4'>
         {moviesList.length > 0 ? (
           moviesList.map((movie, index) => (
@@ -41,6 +42,21 @@ export const MoviesHome = () => {
           <p>Loading...</p>
         )}
       </div>
+=======
+
+
+      {moviesList.map((movie, index) => (
+        <Link to={`/details/${movie.id} `} key={index}   >   
+          <img className='p-5' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+          {/* <Details  movieprop={moviesList}  /> */}
+      {//console.log(movie.id)
+      }  
+       </Link>
+        
+      ))} 
+     
+    </div>
+>>>>>>> 443a864056fc116f093517aaccee2a84ad783e63
     </div>
   );
 };

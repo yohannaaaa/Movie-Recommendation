@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
+  
+
 export const Detail = (props) => {
   const {vote_average,id, poster_path, title, overview,original_language
     , release_date, genres} = props.data;
@@ -10,6 +12,19 @@ export const Detail = (props) => {
   //const recommendationList = movieRecom();
   //console.log(recommendationList.results);
   // Render movie details
+      const [favourites, setFavourites] = useState([]);
+
+      const addToFavourites = (input) => {
+        console.log(input);
+        
+          const movieFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourites'));
+          setFavourites(movieFavourites); 
+          const newFavouriteList = [...favourites, props.data];
+          setFavourites(newFavouriteList);
+          localStorage.setItem('react-movie-app-favourites', JSON.stringify(newFavouriteList));
+          
+        console.log(favourites);
+      };      
 
 function genreArrayExtracter(){
     let array = new Array();
@@ -57,7 +72,7 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
           <div className="p-2 rounded-2xl border-solid border-[0.01rem] text-[0.8rem] border-[black]" > {vote_average} ⭐️</div>
 </div>)}
  <div>
-        <button className=" ml-4 p-2 bg-red-600 rounded-2xl border-[black]">Add To Favorites 🤍</button>
+        <button className=" ml-4 p-2 bg-red-600 rounded-2xl border-[black]" onClick={()=>{addToFavourites(props.data)}}>Add To Favorites 🤍</button>
         </div>
 
 
@@ -70,7 +85,7 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
       (recommend.results) && (<nav className="grid m-3 grid-cols-4 ">{
         recommend.results.map((movie, index) => (
             (movie.id!=id)&&(
-            <Link to={`/details/${movie.id}`} key={index} className="p-1">
+            <Link to={`/details/${movie.id}`} key={index} className="p-1" onClick={() => window.location.load(`/details/${movie.id}`)}>
               <img className="w-[15rem] p-1" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
             </Link>
             )

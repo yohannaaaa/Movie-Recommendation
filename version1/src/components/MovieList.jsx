@@ -15,7 +15,7 @@ const MovieList = (props) => {
                
                  <div className="overlay d-flex align-items-center justify-content-center">
                     <FavouriteComponent/>
-                 </div>  <Details data={movie.imdbID} />
+                 </div> 
              </div>
             
             ))}

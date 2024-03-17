@@ -26,7 +26,7 @@ export const Details = () => {
       });
     }, []); 
 
-    console.log(movie);
+    //console.log(movie);
   return (
     <div>
         <Detail data={movie} />
