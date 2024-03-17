@@ -4,7 +4,7 @@ import {Details} from '../pages/Details';
 
 const MovieList = (props) => {
     const FavouriteComponent = props.favouriteComponent;
-    
+    console.log(props.moviess);
 
     return (
         <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -12,10 +12,9 @@ const MovieList = (props) => {
            
              <div className='image-container d-flex justify-content-start m-3' style={{ margin: "0.5rem" }} key={movie.imdbID}>
                  <img src={movie.Poster} alt="movie"  ></img>
-               
                  <div className="overlay d-flex align-items-center justify-content-center">
                     <FavouriteComponent/>
-                 </div>  <Details data={movie.imdbID} />
+                 </div>  
              </div>
             
             ))}

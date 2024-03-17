@@ -7,35 +7,21 @@ import { IoHeartOutline } from 'react-icons/io5';
 import SearchBox from '../components/SearchBox';
 import AddFavourite from '../components/AddFavourites';
 import MovieList from '../components/MovieList';
-
+import SearchResults from './SearchResults';
  
 
 const Header = () => {
     const [moviess, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    
-    const getMovieRequest = async (searchValue) => {
-      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=13c8922f`;
-    
-      const response = await fetch(url);
-      const responseJson = await response.json();
-    
-      if(responseJson.Search){
-      setMovies(responseJson.Search);
-    }
-    };
-    
-    useEffect(() => {
-      getMovieRequest(searchValue);
-    }, [searchValue]);
-    
+    const [searchRes, setSearchRes] = useState([]);
+   
     return (
         <>
-        <div className='mt-0 p-3 flex justify-between items-center'>
+        <div className='mt-0 p-3 flex justify-between items-baseline'>
                 <h1 className='px-10 font-extrabold text-xl'>TeamTen </h1>
             <div className=' mt-0 flex-1 '>
                 <div className='mt-0 px-10'>
-                      <SearchBox searchValue = {searchValue} setSearchValue={setSearchValue}/>
+                      <SearchBox set={setSearchRes}/>
                 </div> 
             </div>
 
@@ -58,14 +44,9 @@ const Header = () => {
             </ul>
         </div>
 
-         <div className='row'>
-         <Link to={`/Details/${moviess.imdbID}`}> 
-         <MovieList movies ={moviess} favouriteComponent = {AddFavourite}/>
-         
-         </Link> 
-        
-        
-      </div>
+            <div className='row'>
+                  <SearchResults input={searchRes}/>
+            </div>
       </>
     )
 }
