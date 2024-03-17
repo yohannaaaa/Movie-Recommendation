@@ -1,7 +1,7 @@
 import React from "react";
 import {Details} from '../pages/Details';
 
-
+//for the searched movies
 const MovieList = (props) => {
     const FavouriteComponent = props.favouriteComponent;
     
@@ -15,7 +15,7 @@ const MovieList = (props) => {
                
                  <div className="overlay d-flex align-items-center justify-content-center">
                     <FavouriteComponent/>
-                 </div>  <Details data={movie.imdbID} />
+                 </div> 
              </div>
             
             ))}

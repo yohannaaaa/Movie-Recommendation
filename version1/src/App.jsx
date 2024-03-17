@@ -12,7 +12,7 @@ import{
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import SignOut from './pages/Signout';
-import Signin from './pages/Signin';
+import {Loginpage} from './pages/Loginpage';
 import {Details} from './pages/Details';
 import Header from './components/Header';
 
@@ -22,7 +22,7 @@ function App() {
        <Route path='/' element={<Root />} >
         <Route index element={<Home />} />
         <Route path="/Fav" element = {<Favorites/>} />
-        <Route path="/Signin" element = {<Signin/>} />
+        <Route path="/Loginpage" element = {<Loginpage/>} />
         <Route path="/Signout" element = {<SignOut/>} />
         <Route path="/Details/:index" element = {<Details/>} />
       </Route>
