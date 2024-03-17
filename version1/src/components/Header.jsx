@@ -11,31 +11,17 @@ import MovieList from '../components/MovieList';
  
 
 const Header = () => {
-    const [moviess, setMovies] = useState([]);
-    const [searchValue, setSearchValue] = useState('');
-    
-    const getMovieRequest = async (searchValue) => {
-      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=13c8922f`;
-    
-      const response = await fetch(url);
-      const responseJson = await response.json();
-    
-      if(responseJson.Search){
-      setMovies(responseJson.Search);
-    }
-    };
-    
-    useEffect(() => {
-      getMovieRequest(searchValue);
-    }, [searchValue]);
+      const [moviess, setMovies] = useState([]);
+      const [searchValue, setSearchValue] = useState('');
+      const [searchRes, setSearchRes] = useState([]);
     
     return (
         <>
-        <div className='mt-0 p-3 flex justify-between items-center z-10'>
+        <div className='mt-0 p-3 flex justify-between items-baseline z-10'>
                 <h1 className='px-10 font-extrabold text-xl  text-white'>TeamTen </h1>
             <div className=' mt-0 flex-1 '>
                 <div className='mt-0 px-10'>
-                      <SearchBox searchValue = {searchValue} setSearchValue={setSearchValue}/>
+                  <SearchBox set={setSearchRes}/>
                 </div> 
             </div>
 
@@ -58,13 +44,8 @@ const Header = () => {
             </ul>
         </div>
 
-         <div className='row'>
-         <Link to={`/Details/${moviess.imdbID}`}> 
-         <MovieList movies ={moviess} favouriteComponent = {AddFavourite}/>
-         
-         </Link> 
-        
-        
+      <div className='row'>
+            
       </div>
       </>
     )
