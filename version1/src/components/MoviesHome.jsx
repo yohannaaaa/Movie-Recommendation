@@ -22,7 +22,11 @@ export const MoviesHome = () => {
     <div className='grid m-3 grid-cols-4 '>
       {moviesList.map((movie, index) => (
         <Link to={`/details/${index} `} key={index}   >   
+<<<<<<< HEAD
           <img className='p-5' src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : unavailable} alt={movie.title} />
+=======
+          <img className='p-5' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+>>>>>>> d2629ffec974de007849dded282cb713847fc8ec
           {/* <Details  movieprop={moviesList}  /> */}
       {console.log(index)}  
        </Link>
