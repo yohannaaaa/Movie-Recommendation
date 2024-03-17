@@ -1,7 +1,7 @@
 import React from "react";
 import {Details} from '../pages/Details';
 
-
+//for the searched movies
 const MovieList = (props) => {
     const FavouriteComponent = props.favouriteComponent;
     
