@@ -44,10 +44,9 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
       <div className='image h-[300px] w-[300px] p-3'>
         <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
       </div>
-      <div className='imgInfo p-5 h-[400px] w-[800px]'>
+      <div className='imgInfo p-5 h-[400px] w-[800px]  text-white'>
         <h1 className="mb-10 text-3xl font-bold">{title}</h1>
-       <p>{release_date} </p>  
-       <p>{original_language} </p> 
+       <p>{release_date} <span className="px-4">{original_language}</span> </p>  
         <p>{overview}</p>
         {(genres)&&(<div className="inline-flex gap-4 justify-between m-5">
           {
@@ -56,11 +55,17 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
             ))   
           }
           <div className="p-2 rounded-2xl border-solid border-[0.01rem] text-[0.8rem] border-[black]" > {vote_average} ⭐️</div>
-        </div>)}
+</div>)}
+ <div>
+        <button className=" ml-4 p-2 bg-red-600 rounded-2xl border-[black]">Add To Favorites 🤍</button>
+        </div>
+
+
+
       </div>
     </div>
     <div className="m-5 ml-20">
-      <h2 className="mb-10 text-3xl font-bold pl-3 border-solid border-[0rem_0rem_0rem_1rem] border-[black] text-[2rem]" >Similar movies</h2>
+      <h2 className="mb-10  text-white mt-20 text-3xl font-bold pl-3 border-solid border-[0rem_0rem_0rem_1rem] border-[black] text-[2rem] " >Similar movies</h2>
     {
       (recommend.results) && (<nav className="grid m-3 grid-cols-4 ">{
         recommend.results.map((movie, index) => (

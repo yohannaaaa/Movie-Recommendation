@@ -31,15 +31,15 @@ const Header = () => {
     
     return (
         <>
-        <div className='mt-0 p-3 flex justify-between items-center'>
-                <h1 className='px-10 font-extrabold text-xl'>TeamTen </h1>
+        <div className='mt-0 p-3 flex justify-between items-center z-10'>
+                <h1 className='px-10 font-extrabold text-xl  text-white'>TeamTen </h1>
             <div className=' mt-0 flex-1 '>
                 <div className='mt-0 px-10'>
                       <SearchBox searchValue = {searchValue} setSearchValue={setSearchValue}/>
                 </div> 
             </div>
 
-            <ul className='flex justify-between '>
+            <ul className='flex justify-between text-white'>
                    <li className='px-10 font-bold hover:text-gray-300' >
                        <NavLink to='/' > Home</NavLink>
                  </li>
