@@ -16,13 +16,10 @@ export const Detail = (props) => {
 
       const addToFavourites = (input) => {
         console.log(input);
-        
-          const movieFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourites'));
-          setFavourites(movieFavourites); 
-          const newFavouriteList = [...favourites, props.data];
+          const movieFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourites')) || [];
+          const newFavouriteList = [...movieFavourites, input];
           setFavourites(newFavouriteList);
           localStorage.setItem('react-movie-app-favourites', JSON.stringify(newFavouriteList));
-          
         console.log(favourites);
       };      
 
