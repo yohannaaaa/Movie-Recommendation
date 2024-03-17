@@ -62,14 +62,16 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
     <div className="m-5 ml-20">
       <h2 className="mb-10 text-3xl font-bold pl-3 border-solid border-[0rem_0rem_0rem_1rem] border-[black] text-[2rem]" >Similar movies</h2>
     {
-      (recommend.results) && (<div className="grid m-3 grid-cols-4 ">{
+      (recommend.results) && (<nav className="grid m-3 grid-cols-4 ">{
         recommend.results.map((movie, index) => (
-            (movie.id!=id)&&(<NavLink to={`/details/${movie.id} `} key={index}  className = "p-1" >   
+            (movie.id!=id)&&(
+            <Link to={`/details/${movie.id}`} key={index} className="p-1">
               <img className="w-[15rem] p-1" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-            </NavLink>)
+            </Link>
+            )
             ))
           } 
-        </div>
+        </nav>
       )
     }
     </div>
