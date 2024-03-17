@@ -9,44 +9,27 @@ export const Details = () => {
     const movieindex = parseInt(index);
 
 
-    const [moviesList, setMovieList] = useState([])
+    const [movie, setMovie] = useState({});
 
-    const getMovie = () => {
-      
-      fetch("https://api.themoviedb.org/3/discover/movie?api_key=b29d04ec0a55cae1d636f5a70f64bedf")
-      //`https://api.themoviedb.org/3/movie/${movieId}`
-      .then(res => res.json())
-      .then(json => setMovieList(json.results))
+    useEffect(() => {
     
-    }
-    
-    useEffect(() =>{
-      try{
-      getMovie()
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-    },[])
-    
-    console.log(moviesList)
+    const url = `https://api.themoviedb.org/3/movie/${movieindex}?api_key=042aa4748de2bd655dc1224d9e6c6baa`;
 
-    
+    fetch(url)
+      .then(response => response.json())
+      //.then(json => console.log(json))
+      .then(data => {
+        setMovie(data);
+      })
+      .catch(error => {
+        console.error('Error fetching movie details:', error);
+      });
+    }, []); 
 
- // Check if movie is undefined or empty
- if (!moviesList || moviesList.length === 0) {
-    return <div>No movie data available.</div>;
-  }
-      // Find the movie with the matching ID
-  let selectedMovie;
-
-  for(let i = 0; i < moviesList.length; i++){
-    if(moviesList[i].id == movieindex) selectedMovie  = moviesList[i];
-  }
-
-
+    console.log(movie);
   return (
     <div>
-        <Detail data={selectedMovie } />
+        <Detail data={movie} />
     </div>
   )
 }
