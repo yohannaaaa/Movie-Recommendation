@@ -35,7 +35,7 @@ const Header = () => {
                  </li>
 
                  <li className='px-10 font-bold hover:text-gray-300' >
-                       <NavLink to='/Signout' >SignOut</NavLink>
+                       <NavLink to='/Signout' >About Us</NavLink>
                  </li>
 
                  <li className='px-10 font-bold hover:text-gray-300' >
