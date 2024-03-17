@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
+  
+
 export const Detail = (props) => {
   const {vote_average,id, poster_path, title, overview,original_language
     , release_date, genres} = props.data;
@@ -11,20 +13,18 @@ export const Detail = (props) => {
   //console.log(recommendationList.results);
   // Render movie details
       const [favourites, setFavourites] = useState([]);
-    
-      const addToFavourites = () => {
+
+      const addToFavourites = (input) => {
+        console.log(input);
         
-        useEffect(() => {
-          
           const movieFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourites'));
-          setFavourites(movieFavourites || []); 
+          setFavourites(movieFavourites); 
           const newFavouriteList = [...favourites, props.data];
           setFavourites(newFavouriteList);
           localStorage.setItem('react-movie-app-favourites', JSON.stringify(newFavouriteList));
-          console.log(favourites);
-        }, []); 
-        
-      };  
+          
+        console.log(favourites);
+      };      
 
 function genreArrayExtracter(){
     let array = new Array();
@@ -72,9 +72,7 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
           <div className="p-2 rounded-2xl border-solid border-[0.01rem] text-[0.8rem] border-[black]" > {vote_average} ⭐️</div>
 </div>)}
  <div>
-        <button className=" ml-4 p-2 bg-red-600 rounded-2xl border-[black]" onClick={
-          addToFavourites()
-       }>Add To Favorites 🤍</button>
+        <button className=" ml-4 p-2 bg-red-600 rounded-2xl border-[black]" onClick={()=>{addToFavourites(props.data)}}>Add To Favorites 🤍</button>
         </div>
 
 

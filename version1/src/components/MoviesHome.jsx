@@ -36,7 +36,8 @@ export const MoviesHome = () => {
         <Link to={`/details/${movie.id} `} key={index}   >   
           <img className='p-5' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
           {/* <Details  movieprop={moviesList}  /> */}
-      {console.log(movie.id)}  
+      {//console.log(movie.id)
+      }  
        </Link>
         
       ))} 
