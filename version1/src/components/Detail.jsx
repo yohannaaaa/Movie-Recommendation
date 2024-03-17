@@ -40,11 +40,11 @@ const recommend = recommendations(recommendationQureyCreator(genreArrayExtracter
 
   return (
     <>
-    <div className='container flex m-5 ml-20 '  >
-      <div className='image h-[300px] w-[300px] p-3'>
+    <div className='containerd flex m-5 ml-20 '  >
+      <div className='imaged h-[300px] w-[300px] p-3'>
         <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
       </div>
-      <div className='imgInfo p-5 h-[400px] w-[800px]  text-white'>
+      <div className='imgInfod p-5 h-[400px] w-[800px]  text-white'>
         <h1 className="mb-10 text-3xl font-bold">{title}</h1>
        <p>{release_date} <span className="px-4">{original_language}</span> </p>  
         <p>{overview}</p>
