@@ -14,6 +14,7 @@ export const Details = () => {
     const getMovie = () => {
       
       fetch("https://api.themoviedb.org/3/discover/movie?api_key=b29d04ec0a55cae1d636f5a70f64bedf")
+      //`https://api.themoviedb.org/3/movie/${movieId}`
       .then(res => res.json())
       .then(json => setMovieList(json.results))
     
@@ -36,12 +37,15 @@ export const Details = () => {
     return <div>No movie data available.</div>;
   }
       // Find the movie with the matching ID
-  const selectedMovie = moviesList[movieindex];
+  let selectedMovie;
+
+  for(let i = 0; i < moviesList.length; i++){
+    if(moviesList[i].id == movieindex) selectedMovie  = moviesList[i];
+  }
 
 
   return (
     <div>
-        
         <Detail data={selectedMovie } />
     </div>
   )

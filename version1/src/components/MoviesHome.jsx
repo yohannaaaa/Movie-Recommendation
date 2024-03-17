@@ -21,10 +21,10 @@ export const MoviesHome = () => {
   return (
     <div className='grid m-3 grid-cols-4 '>
       {moviesList.map((movie, index) => (
-        <Link to={`/details/${index} `} key={index}   >   
+        <Link to={`/details/${movie.id} `} key={index}   >   
           <img className='p-5' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
           {/* <Details  movieprop={moviesList}  /> */}
-      {console.log(index)}  
+      {console.log(movie.id)}  
        </Link>
         
       ))} 
