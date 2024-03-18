@@ -106,7 +106,7 @@ export const Loginpage = () => {
    </div>
    {action==="Sign Up"?<div></div>:<div className="forgot-password text-center">Forgotten <span>Password?</span></div>}
    
-   <div className="submit-container">
+   
    <div className={action==="Login"? "submit grey": "submit"} onClick={()=>{setAction("Sign Up"); handleSignIn()}}>Sign Up</div>
     <div className={action==="Sign Up"? "submit grey2": "submit"} onClick={()=>{setAction("Login"); handlelogin()}}>Login</div>
    </div>
