@@ -1,25 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { createBrowserRouter, Route, createRoutesFromElements } from "react-router-dom";
-import { RouterProvider } from "react-router-dom";
-import './App.css'
+
+//react router dom
+import{
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Outlet,
+  Route
+}from 'react-router-dom'
 
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import SignOut from './pages/Signout';
-import Signin from './pages/Signin';
-import Details from './pages/Details';
+import {Loginpage} from './pages/Loginpage';
+import {Details} from './pages/Details';
+import Header from './components/Header';
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route>
-        <Route path="/" element = {<Home/>} />
+       <Route path='/' element={<Root />} >
+        <Route index element={<Home />} />
         <Route path="/Fav" element = {<Favorites/>} />
-        <Route path="/Signin" element = {<Signin/>} />
+        <Route path="/Loginpage" element = {<Loginpage/>} />
         <Route path="/Signout" element = {<SignOut/>} />
-        <Route path="/Details" element = {<Details/>} />
+        <Route path="/Details/:index" element = {<Details/>} />
       </Route>
     )
   )
@@ -29,5 +34,15 @@ function App() {
     </>
   )
 }
+export default App;
 
-export default App
+  const Root=()=>{
+    return(
+      <>
+      <div><Header/></div> 
+      <div><Outlet/></div>
+      </>
+    )
+  }
+
+
