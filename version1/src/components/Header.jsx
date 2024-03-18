@@ -21,6 +21,7 @@ const Header = () => {
                 <h1 className='px-10 font-extrabold text-xl  text-white'>TeamTen </h1>
             <div className=' mt-0 flex-1 '>
                 <div className='mt-0 px-10'>
+                  {/* search */}
                   <SearchBox set={setSearchRes}/>
                 </div> 
             </div>
